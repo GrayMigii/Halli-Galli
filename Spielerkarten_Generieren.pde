@@ -1,3 +1,16 @@
+//Spielfläche
+
+PImage bg;
+
+void setup(){
+  size(650,650);
+  bg = loadImage("test.jpg"); //Hintergrund kann nicht geladen werden  
+  background(51);
+}
+
+
+
+
 //Spielkarten
 
 void spielerkarten_1() {
@@ -41,3 +54,4 @@ void spielerkarten_2() {
    break;
  }
 } 
+
