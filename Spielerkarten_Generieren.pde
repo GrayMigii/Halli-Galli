@@ -1,14 +1,22 @@
 int spielerkarten1 = 0, spielerkarten2 = 0, summe=0;
+PImage bg, glocke, hintergrundKarte;
 
 //Spielfläche
-
-PImage bg;
-
 void setup(){
   size(650,650);
-  bg = loadImage("test.jpg"); //Bildhintergrund kann nicht geladen werden  
+  bg = loadImage("background.png");
+  glocke = loadImage("glocke.png");
+  hintergrundKarte = loadImage("karte_hintergrund.png");
+  
   
 }
+
+void draw(){
+  image(bg,0,0);
+  image(glocke,290,290);
+  image(hintergrundKarte, 550, 480);
+}
+
 
 
 
