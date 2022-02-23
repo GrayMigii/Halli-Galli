@@ -69,6 +69,6 @@ void gewonnen(){
   }
 }
 
-void abfrage(){
+void glocke(){
   
 }
