@@ -78,5 +78,16 @@ void gewonnen(){
 }
 
 void glocke(){
-  
+  if (glockeaktivoben==true && spamcheck==true){
+    if (summe==5 || summe==15 || summe==45|| summe==65)
+    glockeaktivoben==false;
+  } else if
+  kartenanzahl1= kartenanzahl1+1;
+  kartenanzahl2= kartenanzahl2-1;
+  if (glockeaktivunten==true && spamcheck==true){
+   if (summe==5 || summe==15 || summe==45|| summe==65)
+   glockeaktivunten=false;
+ } else if 
+ kartenanzahl1= kartenanzahl1-1;
+ kartenanzahl2= kartenanzahl2-1;
 }
