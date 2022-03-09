@@ -1,5 +1,6 @@
 boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true;
-PImage glocke, karte_1, karte_2, karte_3, karte_4, karte_5, karte_6, karte_7, karte_8, karte_9, karte_10, karte_11, karte_12, karte_13, karte_14, karte_15, karte_16, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen, background, kartenhintergrund_basis;
+PImage glocke, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen, background, kartenhintergrund_basis;
+PImage karten[] = new PImage[17];
 int spielerk1=0, spielerk2=0;
 int summe1, summe2, glockensumme=0, zufall1, zufall2;
 int kartenanzahl1=8, kartenanzahl2=8;
@@ -8,20 +9,41 @@ float x=400, x2=400;
 PImage bg, glocke, hintergrundKarte;
 
 //Spielfläche
+int koordinaten_1[] = new int[8];
+int koordinaten_2[] = new int [8];
+
 void setup(){
   size(650,650);
   bg = loadImage("background.png");
   glocke = loadImage("glocke.png");
-  hintergrundKarte = loadImage("karte_hintergrund.png");
+  kartenHintergrund = loadImage("karte_hintergrund.png");
+  kartenhintergrund_basis = loadImage("kartenhintergrund_basis.png");
   
+  for (int i = 1; i < 17; i++){
+    karten[(i-1)] = loadImage("karte_"+i+".png");
   
+}
 }
 
 void draw(){
   image(bg,0,0);
   image(glocke,290,290);
-  image(hintergrundKarte, 550, 480);
+  image(kartenhintergrund_basis,280,20);
+  image(kartenhintergrund_basis,280,470);
+  
+  for (int x = 470; x < 541; x=x+10){
+    for (int j = 0; j < 8; j++){
+      koordinaten_1[j] = x;
+      koordinaten_2[j] = x;
+      
+      for (int k = koordinaten_1[j]; k < 8; k=k-2){
+      
+    }
+    }
+    
+  }
 }
+
 
 
 
