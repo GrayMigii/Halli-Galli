@@ -6,15 +6,14 @@ int summe1, summe2, glockensumme=0, zufall1, zufall2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 
-PImage bg, glocke, hintergrundKarte;
-
-//Spielfläche
+PImage karten[] = new PImage[16];
 int koordinaten_1[] = new int[8];
 int koordinaten_2[] = new int [8];
 
+//Spielfläche
 void setup(){
   size(650,650);
-  bg = loadImage("background.png");
+  karte_hintergrund = loadImage("background.png");
   glocke = loadImage("glocke.png");
   kartenHintergrund = loadImage("karte_hintergrund.png");
   kartenhintergrund_basis = loadImage("kartenhintergrund_basis.png");
@@ -26,7 +25,7 @@ void setup(){
 }
 
 void draw(){
-  image(bg,0,0);
+  image(karte_hintergrund,0,0);
   image(glocke,290,290);
   image(kartenhintergrund_basis,280,20);
   image(kartenhintergrund_basis,280,470);
@@ -43,8 +42,6 @@ void draw(){
     
   }
 }
-
-
 
 
 
