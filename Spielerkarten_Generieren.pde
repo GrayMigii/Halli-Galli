@@ -1,3 +1,23 @@
+boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true;
+PImage glocke, karte_1, karte_2, karte_3, karte_4, karte_5, karte_6, karte_7, karte_8, karte_9, karte_10, karte_11, karte_12, karte_13, karte_14, karte_15, karte_16, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen, background, kartenhintergrund_basis;
+int spielerk1=0, spielerk2=0;
+int summe1, summe2, glockensumme=0, zufall1, zufall2;
+int kartenanzahl1=8, kartenanzahl2=8;
+float x=400, x2=400;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int spielerkarten1 = 0, spielerkarten2 = 0, summe=0;
 PImage bg, glocke, hintergrundKarte;
 
