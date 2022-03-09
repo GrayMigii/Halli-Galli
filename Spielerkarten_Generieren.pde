@@ -36,10 +36,10 @@ void draw(){
       koordinaten_2[j] = x;
       
       while (koordinaten_1[j] > 280){
-        image(karte_hintergrund,(koordinaten_1[j]-2),20)
+        image(karte_hintergrund,(koordinaten_1[j]-2),20);
         }
       while (koordinaten_2[j] > 280){
-        image(karte_hintergrund,(koordinaten_2[j]-2),470)
+        image(karte_hintergrund,(koordinaten_2[j]-2),470);
       }
     }
     
