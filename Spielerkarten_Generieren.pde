@@ -7,8 +7,8 @@ int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 
 PImage karten[] = new PImage[16];
-int koordinaten_1[] = new int[8];
-int koordinaten_2[] = new int [8];
+int anfangsKoordinate_1[] = new int[8];
+int anfangsKoordinate_2[] = new int [8];
 
 //Spielfläche
 void setup(){
@@ -30,19 +30,47 @@ void draw(){
   image(kartenhintergrund_basis,280,20);
   image(kartenhintergrund_basis,280,470);
   
-  for (int x = 470; x < 541; x=x+10){
-    for (int j = 0; j < 8; j++){
-      koordinaten_1[j] = x;
-      koordinaten_2[j] = x;
-      
-      while (koordinaten_1[j] > 280){
-        image(karte_hintergrund,(koordinaten_1[j]-2),20);
-        }
-      while (koordinaten_2[j] > 280){
-        image(karte_hintergrund,(koordinaten_2[j]-2),470);
-      }
+  koordinatenLimit_1 = 541;
+  koordinatenLimit_2 = 541;
+  
+  if(){
+    koordinatenLimit_1 = koordinatenLimit_1 + (10*§)
+  }else if(){
+    koordinatenLimit_1 = koordinatenLimit_1 - (10*§)
+  }
+  
+  if(){
+    koordinatenLimit_2 = koordinatenLimit_2 + (10*§)
+  }else if(){
+    koordinatenLimit_2 = koordinatenLimit_2 - (10*§)
+  }
+  
+  for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
+   for (int j = 0; j < § ; j++){
+    loadImage(karten_hintergrund,x1,20);
+    anfangsKoordinate_1[j] = x1;
+   }
+  }
+  if(){
+    while (anfangsKoordinate_1[j] > 280){
+      anfangsKoordinate_1[j] = anfangsKoordinate_1[j]-2;
+      koordinateX_1 = anfangsKoordinate_1[j];
+      image(karte_hintergrund,koordinateX,20);
     }
-    
+  }
+  
+  for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
+    for (int k = 0; k < § ; k++){
+      loadImage(karten_hintergrund,x2,470);
+      anfangsKoordinate_2[k] = x2;
+    }
+  }
+  if(){
+    while (anfangsKoordinate_2[k] > 280){
+      anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
+      koordinateX_2 = anfangsKoordinate_2[k];
+      image(karte_hintergrund,koordinateX_2,470);
+    }
   }
 }
 
