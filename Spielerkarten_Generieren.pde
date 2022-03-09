@@ -10,38 +10,7 @@ PImage karten[] = new PImage[16];
 int koordinaten_1[] = new int[8];
 int koordinaten_2[] = new int [8];
 
-//Spielfläche
-void setup(){
-  size(650,650);
-  karte_hintergrund = loadImage("background.png");
-  glocke = loadImage("glocke.png");
-  kartenHintergrund = loadImage("karte_hintergrund.png");
-  kartenhintergrund_basis = loadImage("kartenhintergrund_basis.png");
-  
-  for (int i = 1; i < 17; i++){
-    karten[(i-1)] = loadImage("karte_"+i+".png");
-  
-}
-}
 
-void draw(){
-  image(karte_hintergrund,0,0);
-  image(glocke,290,290);
-  image(kartenhintergrund_basis,280,20);
-  image(kartenhintergrund_basis,280,470);
-  
-  for (int x = 470; x < 541; x=x+10){
-    for (int j = 0; j < 8; j++){
-      koordinaten_1[j] = x;
-      koordinaten_2[j] = x;
-      
-      for (int k = koordinaten_1[j]; k < 8; k=k-2){
-      
-    }
-    }
-    
-  }
-}
 
 
 
