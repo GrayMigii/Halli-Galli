@@ -5,20 +5,6 @@ int summe1, summe2, glockensumme=0, zufall1, zufall2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-int spielerkarten1 = 0, spielerkarten2 = 0, summe=0;
 PImage bg, glocke, hintergrundKarte;
 
 //Spielfläche
