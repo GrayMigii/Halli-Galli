@@ -1,0 +1,338 @@
+boolean oben = true, unten = false, tutorial=true;
+PImage glocke, karte_1, karte_2, karte_3, karte_4, karte_5, karte_6, karte_7, karte_8, karte_9, karte_10, karte_11, karte_12, karte_13, karte_14, karte_15, karte_16, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen;
+int spielerk1=0, spielerk2=0;
+int summe1, summe2, glockensumme=0;
+int kartenanzahl1=8, kartenanzahl2=8;
+
+
+static void main() {
+}
+
+void setup() {
+  size(600, 600);
+  glocke= loadImage("glocke.png");
+  karte_1= loadImage("karte_1.png");
+  karte_2= loadImage("karte_2.png");
+  karte_3= loadImage("karte_3.png");
+  karte_4= loadImage("karte_4.png");
+  karte_5= loadImage("karte_5.png");
+  karte_6= loadImage("karte_6.png");
+  karte_7= loadImage("karte_7.png");
+  karte_8= loadImage("karte_8.png");
+  karte_9= loadImage("karte_9.png");
+  karte_10= loadImage("karte_10.png");
+  karte_11= loadImage("karte_11.png");
+  karte_12= loadImage("karte_12.png");
+  karte_13= loadImage("karte_13.png");
+  karte_14= loadImage("karte_14.png");
+  karte_15= loadImage("karte_15.png");
+  karte_16= loadImage("karte_16.png");
+  karte_hintergrund= loadImage("karte_hintergrund.png");
+  bogen= loadImage("bogen.png");
+  spieler_1_gewonnen= loadImage("spieler_1_gewonnen.png");
+  spieler_2_gewonnen= loadImage("spieler_2_gewonnen.png");
+}
+
+void draw() {
+  background(51, 25, 0);
+  image(glocke, 265, 265);
+  bogen();
+  spielerkarten1();
+  spielerkarten2();
+  gewonnen();
+  tutorial();
+  //fill(255, 204, 0);
+  //noStroke();
+  //rect(265, 265, 70, 70);
+
+  // fill(255, 204, 0);
+  // rect(255,50,90,160);
+  
+}
+
+void tutorial(){
+  if (tutorial==true){
+  fill(0, 0, 0);
+  rect(0,0,600,600);
+  fill(255, 0, 0);
+  rect(250,275,100,50);
+  }
+}
+
+void karten_ziehen1() {
+  spielerk1 = (int) Math.round(Math.random( )*15+1);
+  
+  //21 bugg
+  while (spielerk1==8 && spielerk2==13||spielerk1==13 && spielerk2==8){
+  spielerk1 = (int) Math.round(Math.random( )*15+1);
+  }
+  //13(1) bugg
+  while (spielerk1==9 && spielerk2==4||spielerk1==4 && spielerk2==9){
+  spielerk1 = (int) Math.round(Math.random( )*15+1);
+  }
+  //13(2) bugg
+  while (spielerk1==2 && spielerk2==11||spielerk1==11 && spielerk2==2){
+  spielerk1 = (int) Math.round(Math.random( )*15+1);
+  }
+  //5 bugg
+  while (spielerk1==5 && spielerk2==0){
+  spielerk1 = (int) Math.round(Math.random( )*15+1);
+  }
+  //13 bugg
+  while (spielerk1==13 && spielerk2==0){
+  spielerk1 = (int) Math.round(Math.random( )*15+1);
+  }
+}
+
+void karten_ziehen2() {
+  spielerk2 = (int) Math.round(Math.random( )*15+1);
+    
+  //21 bugg
+  while (spielerk1==8 && spielerk2==13||spielerk1==13 && spielerk2==8){
+  spielerk2 = (int) Math.round(Math.random( )*15+1);
+  }
+  //13 bugg
+  while (spielerk1==9 && spielerk2==4||spielerk1==4 && spielerk2==9){
+  spielerk2 = (int) Math.round(Math.random( )*15+1);
+  }
+  //13(2) bugg
+  while (spielerk1==2 && spielerk2==11||spielerk1==11 && spielerk2==2){
+  spielerk2 = (int) Math.round(Math.random( )*15+1);
+  }
+}
+
+
+
+void spielerkarten1() {
+  //Hintergrund
+  if (spielerk1==0) {
+    image(karte_hintergrund, 255, 50);
+  }
+  //1
+  if (spielerk1==1) {
+    image(karte_1, 255, 50);
+  }
+  //2
+  if (spielerk1==2) {
+    image(karte_2, 255, 50);
+  }
+  //3
+  if (spielerk1==3) {
+    image(karte_3, 255, 50);
+  }
+  //4
+  if (spielerk1==4) {
+    image(karte_4, 255, 50);
+  }
+  //5
+  if (spielerk1==5) {
+    image(karte_5, 255, 50);
+  }
+  //6
+  if (spielerk1==6) {
+    image(karte_6, 255, 50);
+  }
+  //7
+  if (spielerk1==7) {
+    image(karte_7, 255, 50);
+  }
+  //8
+  if (spielerk1==8) {
+    image(karte_8, 255, 50);
+  }
+  //9
+  if (spielerk1==9) {
+    image(karte_9, 255, 50);
+  }
+  //10
+  if (spielerk1==10) {
+    image(karte_10, 255, 50);
+  }
+  //11
+  if (spielerk1==11) {
+    image(karte_11, 255, 50);
+  }
+  //12
+  if (spielerk1==12) {
+    image(karte_12, 255, 50);
+  }
+  //13
+  if (spielerk1==13) {
+    image(karte_13, 255, 50);
+  }
+  //14
+  if (spielerk1==14) {
+    image(karte_14, 255, 50);
+  }
+  //15
+  if (spielerk1==15) {
+    image(karte_15, 255, 50);
+  }
+  //16
+  if (spielerk1==16) {
+    image(karte_16, 255, 50);
+  }
+}
+
+
+void spielerkarten2() {
+  //0
+  if (spielerk2==0) {
+    image(karte_hintergrund, 255, 390);
+  }
+  //1
+  if (spielerk2==1) {
+    image(karte_1, 255, 390);
+  }
+  //2
+  if (spielerk2==2) {
+    image(karte_2, 255, 390);
+  }
+  //3
+  if (spielerk2==3) {
+    image(karte_3, 255, 390);
+  }
+  //4
+  if (spielerk2==4) {
+    image(karte_4, 255, 390);
+  }
+  //5
+  if (spielerk2==5) {
+    image(karte_5, 255, 390);
+  }
+  //6
+  if (spielerk2==6) {
+    image(karte_6, 255, 390);
+  }
+  //7
+  if (spielerk2==7) {
+    image(karte_7, 255, 390);
+  }
+  //8
+  if (spielerk2==8) {
+    image(karte_8, 255, 390);
+  }
+  //9
+  if (spielerk2==9) {
+    image(karte_9, 255, 390);
+  }
+  //10
+  if (spielerk2==10) {
+    image(karte_10, 255, 390);
+  }
+  //11
+  if (spielerk2==11) {
+    image(karte_11, 255, 390);
+  }
+  //12
+  if (spielerk2==12) {
+    image(karte_12, 255, 390);
+  }
+  //13
+  if (spielerk2==13) {
+    image(karte_13, 255, 390);
+  }
+  //14
+  if (spielerk2==14) {
+    image(karte_14, 255, 390);
+  }
+  //15
+  if (spielerk2==15) {
+    image(karte_15, 255, 390);
+  }
+  //16
+  if (spielerk2==16) {
+    image(karte_16, 255, 390);
+  }
+}
+
+
+
+
+
+boolean isMouseOver(int x, int y, int w, int h) {
+
+  if (mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h) {
+    return true;
+  }
+  return false;
+}
+
+void glockes() {
+  glockensumme=spielerk1+spielerk2;
+  //nur für Test
+  //println(glockensumme);
+}
+
+void gewonnen(){
+  if (kartenanzahl1<1){
+    println("Untere Spieler hat gewonnen");
+    image(spieler_2_gewonnen,0,0);
+  }
+  if (kartenanzahl2<1){
+    println("Obere Spieler hat gewonnen");
+    image(spieler_1_gewonnen,0,0);
+  }
+}
+//250,275,100,50    tutorial
+void mousePressed() {
+  glockes();
+  //tutorialbutton
+  if (isMouseOver(250, 275, 100, 50) ==true && tutorial==true) {
+    tutorial=false;
+  }
+  //Glockeunten
+  if (isMouseOver(265, 265, 70, 70) ==true && (mouseButton == RIGHT)) {
+    if (glockensumme==5|glockensumme==13|glockensumme==21|glockensumme==29){
+    kartenanzahl2=kartenanzahl2+1;
+    kartenanzahl1=kartenanzahl1-1;
+    println("unten +1");
+    
+    } else {
+      kartenanzahl2=kartenanzahl2-1;
+      kartenanzahl1=kartenanzahl1+1;
+      println("unten -1");
+      println(kartenanzahl2);
+    }
+  }
+  //Glockeoben
+  if (isMouseOver(265, 265, 70, 70) ==true && (mouseButton == LEFT)) {
+    if (glockensumme==5|glockensumme==13|glockensumme==21|glockensumme==29){
+    kartenanzahl1=kartenanzahl1+1;
+    kartenanzahl2=kartenanzahl2-1;
+    println("oben +1");
+    
+    } else {
+      kartenanzahl1=kartenanzahl1-1;
+      kartenanzahl2=kartenanzahl2+1;
+      println("oben -1");
+      println(kartenanzahl1);    
+    }
+  }
+  //Spielerkarten1
+  if (isMouseOver(255, 50, 90, 160) ==true && oben == true && (mouseButton == LEFT)) {
+    karten_ziehen1();
+    println(spielerk1);
+    oben=false;
+    unten=true;
+
+    
+  }
+  //Spielerkarten2
+  if (isMouseOver(255, 390, 90, 160) ==true && unten == true && (mouseButton == RIGHT)) {
+    karten_ziehen2();
+    println(spielerk2);
+    unten=false;
+    oben=true;
+
+  }
+}
+
+void bogen(){
+  if (oben == true){
+    image(bogen, 170, 95); 
+  }
+  if (unten == true){
+    image(bogen, 170, 435); 
+  }
+}
