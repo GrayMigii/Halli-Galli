@@ -1,7 +1,7 @@
-boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true;
+boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false;
 PImage glocke, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen, background, kartenhintergrund_basis;
 PImage karten[] = new PImage[17];
-int spielerk1=0, spielerk2=0;
+int spielerkarten1=0, spielerkarten2=0;
 int summe1, summe2, glockensumme=0, zufall1, zufall2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
