@@ -125,12 +125,12 @@ void summe(){
 
 void gewonnen(){
   //Spieler 1 hat gewonnen
-  if (spielerkarten1==0){
-    println("Spieler 1 hat gewonnen");
+  if (kartenanzahl1<1){
+    println("Spieler 2 hat gewonnen");
   }
   //Spieler 2 hat gewonnen
-  if (spielerkarten2==0){
-    println("Spieler 2 hat gewonnen");
+  if (kartenanzahl2<1){
+    println("Spieler 1 hat gewonnen");
   }
 }
 
