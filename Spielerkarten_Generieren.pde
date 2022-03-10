@@ -141,7 +141,7 @@ void glocke1(){
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 -1;
   glocker=false;
- } else if (glockeaktivoben==true && spamcheck==true){
+ } else if (glockeaktivoben==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 -1;
   kartenanzahl2 = kartenanzahl2 +1;
  }
@@ -154,7 +154,7 @@ void glocke2(){
   kartenanzahl1= kartenanzahl1 -1;
   kartenanzahl2= kartenanzahl2 +1;
   glocker= false:
- } else if (glockeaktivunten==true && spamcheck==true){
+ } else if (glockeaktivunten==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 
  }
