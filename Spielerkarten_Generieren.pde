@@ -162,11 +162,17 @@ void glocke2(){
 
 
 void keyPressed(){
-  if (key=='f'){
+  if (key=='j'|| key=='J'){
    glockeaktivoben=true;
    
- if (key=='l'){
+ if (key=='f'|| key=='F'){
    glockeaktivunten=true;
+  }
+  if (key=='a'||key=='A'){
+  
+  }
+  if (key=='ä'||key=='Ä')]{
+  
   }
  }
 }
