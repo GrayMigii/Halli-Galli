@@ -1,4 +1,4 @@
-boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false;
+boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen, background, kartenhintergrund_basis;
 PImage karten[] = new PImage[17];
 int spielerkarten1=0, spielerkarten2=0;
@@ -169,10 +169,10 @@ void keyPressed(){
    glockeaktivunten=true;
   }
   if (key=='a'||key=='A'){
-  
+   spielerkartenziehen1=true;
   }
   if (key=='ä'||key=='Ä')]{
-  
+   spielerkartenziehen2=true;
   }
  }
 }
