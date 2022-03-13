@@ -13,6 +13,7 @@ int anfangsKoordinate_2[] = new int [8];
 boolean bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false;
 
 //Spielfläche
+
 void setup(){
   size(650,650);
   background = loadImage("background.png");
@@ -40,10 +41,10 @@ void draw(){
   keyPressed();
   
   if(){
-    bedingungPlus_1 == true;
+    bedingungPlus_1 = true;
   }
   if(){
-    bedingungMinus_1 == true;
+    bedingungMinus_1 = true;
   }
   
   if(bedingungPlus_1 == true){
