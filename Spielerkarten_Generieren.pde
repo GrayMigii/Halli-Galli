@@ -1,6 +1,5 @@
 boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen, background, kartenhintergrund_basis;
-PImage karten[] = new PImage[17];
 int spielerkarten1=0, spielerkarten2=0;
 int summe1, summe2, summe=0, zufall1, zufall2;
 int kartenanzahl1=8, kartenanzahl2=8;
@@ -24,10 +23,15 @@ void setup(){
   for (int i = 1; i < 17; i++){
     karten[(i-1)] = loadImage("karte_"+i+".png");
   
-}
+  }
 }
 
 void draw(){
+
+  glocke1();
+  glocke2();
+  keyPressed();
+  
   image(background,0,0);
   image(glocke,290,290);
   image(kartenhintergrund_basis,280,20);
@@ -36,64 +40,62 @@ void draw(){
   koordinatenLimit_1 = 541;
   koordinatenLimit_2 = 541;
   
-  glocke1();
-  glocke2();
-  keyPressed();
-  
-  if(){
-    bedingungPlus_1 = true;
-  }
-  if(){
-    bedingungMinus_1 = true;
-  }
-  
-  if(bedingungPlus_1 == true){
-    koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
-  }else if(bedingungMinus_1 == true){
-    koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
-  }
-  
-  if(){
-    bedingungPlus_2 = true;
-  }
-  if(){
-    bedingungMinus_2 = true;
-  }
-  
-  if(bedingungPlus_2 == true){
-    koordinatenLimit_2 = koordinatenLimit_2 + (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
-  }else if(bedingungMinus_2 == true){
-    koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
-  }
-  
-  for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
-   for (int j = 0; j < kartenanzahl2 ; j++){
-    image(karten_hintergrund,x1,20);
-    anfangsKoordinate_1[j] = x1;
-   }
-  }
-  if(spielerkartenziehen1 == true){
-    while (anfangsKoordinate_1[j] > 275){
-      anfangsKoordinate_1[j] = anfangsKoordinate_1[j]-2;
-      koordinateX_1 = anfangsKoordinate_1[j];
-      image(karte_hintergrund,koordinateX,20);
+  while(){
+    if(){
+      bedingungPlus_1 = true;
     }
-    image();
-  }
-  
-  for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
-    for (int k = 0; k < kartenanzahl2 ; k++){
-      image(karten_hintergrund,x2,470);
-      anfangsKoordinate_2[k] = x2;
+    if(){
+      bedingungMinus_1 = true;
     }
-  }
-  if(spielerkartenziehen2 == true){
-    while (anfangsKoordinate_2[k] > 275){
-      anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
-      koordinateX_2 = anfangsKoordinate_2[k];
-      image(karte_hintergrund,koordinateX_2,470);
+
+    if(bedingungPlus_1 == true){
+      koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
+    }else if(bedingungMinus_1 == true){
+      koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
     }
-    image();
+
+    if(){
+      bedingungPlus_2 = true;
+    }
+    if(){
+      bedingungMinus_2 = true;
+    }
+
+    if(bedingungPlus_2 == true){
+      koordinatenLimit_2 = koordinatenLimit_2 + (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
+    }else if(bedingungMinus_2 == true){
+      koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
+    }
+
+    for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
+     for (int j = 0; j < kartenanzahl2 ; j++){
+      image(karten_hintergrund,x1,20);
+      anfangsKoordinate_1[j] = x1;
+     }
+    }
+    if(spielerkartenziehen1 == true){
+      while (anfangsKoordinate_1[j] > 275){
+        anfangsKoordinate_1[j] = anfangsKoordinate_1[j]-2;
+        koordinateX_1 = anfangsKoordinate_1[j];
+        image(karte_hintergrund,koordinateX,20);
+      }
+      image();
+    }
+
+    for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
+      for (int k = 0; k < kartenanzahl2 ; k++){
+        image(karten_hintergrund,x2,470);
+        anfangsKoordinate_2[k] = x2;
+      }
+    }
+    if(spielerkartenziehen2 == true){
+      while (anfangsKoordinate_2[k] > 275){
+        anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
+        koordinateX_2 = anfangsKoordinate_2[k];
+        image(karte_hintergrund,koordinateX_2,470);
+      }
+      image();
+    }
   }
 }
 
