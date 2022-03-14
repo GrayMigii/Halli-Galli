@@ -175,8 +175,8 @@ void gewonnen(){
 }
 
 void glocke1(){
-  if (glockeaktivoben==true && glocker==true)
-    if (summe==5 || summe==15 || summe==45|| summe==65)
+  if (glockeaktivoben==true && glocker==true){
+    if (summe==5 || summe==15 || summe==45|| summe==65){
     glockeaktivoben=false;
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 -1;
@@ -184,8 +184,9 @@ void glocke1(){
  } else if (glockeaktivoben==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 -1;
   kartenanzahl2 = kartenanzahl2 +1;
+   }
+  }
  }
-}
 
 void glocke2(){
   if (glockeaktivunten==true && glocker==true)
