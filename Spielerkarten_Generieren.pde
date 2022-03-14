@@ -259,9 +259,11 @@ void keyPressed(){
   }
   if (key=='a'||key=='A'){
    spielerkartenziehen1=true;
+   spielerkarten_1();
   }
   if (key=='ä'||key=='Ä')]{
    spielerkartenziehen2=true;
+   spielerkarten_2();
   }
  }
 }
