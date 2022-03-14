@@ -45,6 +45,8 @@ void draw(){
 
   while(){
     
+    //Kartenanzahl-Anzeige
+    
     if(kartenanzahl1 < 10){
       anzeige1 = "0" + Integer.toString(kartenanzahl1);
     }else{
@@ -81,17 +83,13 @@ void draw(){
     fill(255,colorA_2,colorB_2);
     text(anzeige2,230,470);
     
+    //
+    
     if(){
       bedingungPlus_1 = true;
     }
     if(){
       bedingungMinus_1 = true;
-    }
-
-    if(bedingungPlus_1 == true){
-      koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
-    }else if(bedingungMinus_1 == true){
-      koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
     }
 
     if(){
@@ -100,19 +98,20 @@ void draw(){
     if(){
       bedingungMinus_2 = true;
     }
-
+    
+    if(bedingungPlus_1 == true){
+      koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
+    }else if(bedingungMinus_1 == true){
+      koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
+    }
+    
     if(bedingungPlus_2 == true){
       koordinatenLimit_2 = koordinatenLimit_2 + (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
     }else if(bedingungMinus_2 == true){
       koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
     }
-
-    for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
-     for (int j = 0; j < kartenanzahl2 ; j++){
-      image(karten_hintergrund,x1,20);
-      anfangsKoordinate_1[j] = x1;
-     }
-    }
+    
+    //
     
     if(spielerkarten1 < 5){
       anzeigeKarte1 = spielerkarten1;
@@ -134,24 +133,42 @@ void draw(){
       anzeigeKarte2 = spielerkarten2 - 18;
     }
     
+    //Grafische Darstellung der aktuellen Karten des 1.Spielers
+    
+    for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
+     for (int j = 0; j < kartenanzahl2 ; j++){
+      image(karten_hintergrund,x1,20);
+      anfangsKoordinate_1[j] = x1;
+     }
+    }
+    
+    //Das Bewegen der Karten vom 1. Spieler
     
     if(spielerkartenziehen1 == true){
-      while (anfangsKoordinate_1[j] > 275){
+      while (anfangsKoordinate_1[j] > 278){
         anfangsKoordinate_1[j] = anfangsKoordinate_1[j]-2;
         koordinateX_1 = anfangsKoordinate_1[j];
         image(karte_hintergrund,koordinateX,20);
       }
       image(karten[anzeigeKarte1],280,20);
     }
-
+    
+    //Grafische Darstellung der aktuellen Karten des 2.Spielers
+    
     for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
       for (int k = 0; k < kartenanzahl2 ; k++){
         image(karten_hintergrund,x2,470);
         anfangsKoordinate_2[k] = x2;
       }
     }
+    do{
+      x2 = x2 + 10;
+    }while();
+    
+    //Das Bewegen der Karten vom 2.Spieler
+    
     if(spielerkartenziehen2 == true){
-      while (anfangsKoordinate_2[k] > 275){
+      while (anfangsKoordinate_2[k] > 278){
         anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
         koordinateX_2 = anfangsKoordinate_2[k];
         image(karte_hintergrund,koordinateX_2,470);
