@@ -194,7 +194,7 @@ void glocke2(){
    glockeaktivunten=false;
   kartenanzahl1= kartenanzahl1 -1;
   kartenanzahl2= kartenanzahl2 +1;
-  glocker= false:
+  glocker= false;
  } else if (glockeaktivunten==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 
