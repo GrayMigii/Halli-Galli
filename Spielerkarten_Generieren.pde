@@ -133,7 +133,7 @@ void draw(){
       anzeigeKarte2 = spielerkarten2 - 18;
     }
     
-    //Grafische Darstellung der aktuellen Karten des 1.Spielers
+    //Grafische Darstellung der aktuellen Karten des 1.Spielers und Das Bewegen der Karten vom 1. Spieler
     
     for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
      for (int j = 0; j < kartenanzahl2 ; j++){
@@ -141,8 +141,12 @@ void draw(){
       anfangsKoordinate_1[j] = x1;
      }
     }
-    
-    //Das Bewegen der Karten vom 1. Spieler
+    int j = 0;
+    for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
+      image(karten_hintergrund,x1,470);
+      anfangsKoordinate_1[j] = x1;
+      j++;
+    }
     
     if(spielerkartenziehen1 == true){
       while (anfangsKoordinate_1[j] > 278){
@@ -153,7 +157,7 @@ void draw(){
       image(karten[anzeigeKarte1],280,20);
     }
     
-    //Grafische Darstellung der aktuellen Karten des 2.Spielers
+    //Grafische Darstellung der aktuellen Karten des 2.Spielers und Das Bewegen der Karten vom 2.Spieler
     
     for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
       for (int k = 0; k < kartenanzahl2 ; k++){
@@ -161,11 +165,12 @@ void draw(){
         anfangsKoordinate_2[k] = x2;
       }
     }
-    do{
-      x2 = x2 + 10;
-    }while();
-    
-    //Das Bewegen der Karten vom 2.Spieler
+    int k = 0;
+    for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
+      image(karten_hintergrund,x2,470);
+      anfangsKoordinate_2[k] = x2;
+      k++;
+    }
     
     if(spielerkartenziehen2 == true){
       while (anfangsKoordinate_2[k] > 278){
