@@ -7,8 +7,8 @@ float x=400, x2=400;
 String anzeige1, anzeige2;
 
 PImage karten[] = new PImage[16];
-int anfangsKoordinate_1[] = new int[8];
-int anfangsKoordinate_2[] = new int [8];
+int anfangsKoordinate_1[] = new int [16];
+int anfangsKoordinate_2[] = new int [16];
 
 PFont f = createFont(); 
 int anzeigeKarte1, anzeigeKarte2;
