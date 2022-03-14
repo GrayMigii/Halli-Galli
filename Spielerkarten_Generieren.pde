@@ -1,4 +1,4 @@
-boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
+boolean bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karte_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
 int summe1, summe2, summe=0, zufall1, zufall2;
@@ -9,8 +9,6 @@ String anzeige1, anzeige2;
 PImage karten[] = new PImage[16];
 int anfangsKoordinate_1[] = new int[8];
 int anfangsKoordinate_2[] = new int [8];
-
-boolean bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false;
 
 PFont f = createFont(); 
 int anzeigeKarte1, anzeigeKarte2;
