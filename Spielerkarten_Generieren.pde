@@ -1,9 +1,10 @@
 boolean oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
-PImage glocke, karte_hintergrund, bogen, spieler_1_gewonnen, spieler_2_gewonnen, background, kartenhintergrund_basis;
+PImage glocke, karte_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
 int summe1, summe2, summe=0, zufall1, zufall2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
+String anzeige1, anzeige2;
 
 PImage karten[] = new PImage[16];
 int anfangsKoordinate_1[] = new int[8];
@@ -40,7 +41,22 @@ void draw(){
   koordinatenLimit_1 = 541;
   koordinatenLimit_2 = 541;
   
+  if(kartenanzahl1 < 10){
+    anzeige1 = "0" + Integer.toString(kartenanzahl1);
+  }else{
+    anzeige1 = Integer.toString(kartenanzahl1);
+  }
+  
+  if(kartenanzahl2 < 10){
+    anzeige2 = "0" + Integer.toString(kartenanzahl2);
+  }else{
+    anzeige2 = Integer.toString(kartenanzahl2);
+  }
+  
   while(){
+  
+    text(anzeige1,)
+    text(anzeige2,)
     if(){
       bedingungPlus_1 = true;
     }
