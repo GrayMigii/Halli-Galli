@@ -189,8 +189,8 @@ void glocke1(){
  }
 
 void glocke2(){
-  if (glockeaktivunten==true && glocker==true)
-   if (summe==5 || summe==15 || summe==45|| summe==65)
+  if (glockeaktivunten==true && glocker==true){
+   if (summe==5 || summe==15 || summe==45|| summe==65){
    glockeaktivunten=false;
   kartenanzahl1= kartenanzahl1 -1;
   kartenanzahl2= kartenanzahl2 +1;
@@ -198,9 +198,9 @@ void glocke2(){
  } else if (glockeaktivunten==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 
+  }
  }
 }
-
 
 void keyPressed(){
   if (key=='j'|| key=='J'){
