@@ -1,4 +1,4 @@
-boolean bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
+boolean rundenSieg_1 = false, rundenSieg_2 = false, bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karte_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
 int summe1, summe2, summe=0, zufall1, zufall2;
@@ -83,20 +83,15 @@ void draw(){
     fill(255,colorA_2,colorB_2);
     text(anzeige2,230,470);
     
-    //
+    //Bestimmung der Anzahl der angezeigten Karten
     
-    if(){
+    if(rundenSieg_1 == true){
       bedingungPlus_1 = true;
-    }
-    if(){
-      bedingungMinus_1 = true;
-    }
-
-    if(){
-      bedingungPlus_2 = true;
-    }
-    if(){
       bedingungMinus_2 = true;
+    }
+    if(rundenSieg_2 == true){
+      bedingungMinus_1 = true;
+      bedingungPlus_2 = true;
     }
     
     if(bedingungPlus_1 == true){
@@ -111,7 +106,7 @@ void draw(){
       koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
     }
     
-    //
+    //Bestimmung der angezeigten Karte
     
     if(spielerkarten1 < 5){
       anzeigeKarte1 = spielerkarten1;
@@ -250,10 +245,12 @@ void glocke1(){
     glockeaktivoben=false;
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 -1;
+  //rundenSieg_1 = true;
   glocker=false;
  } else if (glockeaktivoben==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 -1;
   kartenanzahl2 = kartenanzahl2 +1;
+  //rundenSieg_2 = true;
    }
   }
  }
