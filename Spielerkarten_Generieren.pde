@@ -134,13 +134,14 @@ void draw(){
     }
     
     //Grafische Darstellung der aktuellen Karten des 1.Spielers und Das Bewegen der Karten vom 1. Spieler
-    
+    /*
     for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
      for (int j = 0; j < kartenanzahl2 ; j++){
       image(karten_hintergrund,x1,20);
       anfangsKoordinate_1[j] = x1;
      }
     }
+    */
     int j = 0;
     for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
       image(karten_hintergrund,x1,470);
@@ -158,13 +159,14 @@ void draw(){
     }
     
     //Grafische Darstellung der aktuellen Karten des 2.Spielers und Das Bewegen der Karten vom 2.Spieler
-    
+    /*
     for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
       for (int k = 0; k < kartenanzahl2 ; k++){
         image(karten_hintergrund,x2,470);
         anfangsKoordinate_2[k] = x2;
       }
     }
+    */
     int k = 0;
     for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
       image(karten_hintergrund,x2,470);
