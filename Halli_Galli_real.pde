@@ -1,7 +1,7 @@
 boolean glockeaktivunten = false, rundenSieg_1 = false, rundenSieg_2 = false, bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karten_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
-int summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
+int colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0, summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 String anzeige1, anzeige2;
@@ -53,31 +53,7 @@ void draw(){
       anzeige2 = Integer.toString(kartenanzahl2);
     }
     
-    int  colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0;
     
-    if(spielerwechsel==false){
-      colorA_1 = 0;
-      colorB_1 = 0;
-    }else{
-      colorA_1 = 255;
-      colorB_1 = 255;
-    }
-    
-    if(spielerwechsel==true){
-      colorA_2 = 0;
-      colorB_2 = 0;
-    }else{
-      colorA_2 = 255;
-      colorB_2 = 255;
-    }
-    
-    textSize(50);
-    
-    fill(255,colorA_1,colorB_1);
-    text(anzeige1,230,20);
-   
-    fill(255,colorA_2,colorB_2);
-    text(anzeige2,230,470);
     
     //Bestimmung der angezeigten Karte
     
@@ -190,6 +166,33 @@ void draw(){
   
 }
 
+
+void anzeige(){
+  if(spielerwechsel==false){
+      colorA_1 = 0;
+      colorB_1 = 0;
+    }else{
+      colorA_1 = 255;
+      colorB_1 = 255;
+    }
+    
+    if(spielerwechsel==true){
+      colorA_2 = 0;
+      colorB_2 = 0;
+    }else{
+      colorA_2 = 255;
+      colorB_2 = 255;
+    }
+    
+    textSize(50);
+    
+    fill(255,colorA_1,colorB_1);
+    text(anzeige1,230,20);
+   
+    fill(255,colorA_2,colorB_2);
+    text(anzeige2,230,470);
+  
+}
 
 
 //Spielkarten
