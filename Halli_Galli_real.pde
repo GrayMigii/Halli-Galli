@@ -19,7 +19,7 @@ ArrayList<Integer> anfangsKoordinate_2 = new ArrayList<Integer>();
 int anzeigeKarten1 = new int [16];
 int anzeigeKarten2 = new int [16];
 int anfangsKoordinate_1 = new int [16];
-int anfangsKoordinate_1 = new int [16];
+int anfangsKoordinate_2 = new int [16];
 
 
 //Spielfläche
@@ -244,19 +244,23 @@ void kartenAnzeige2(){
 
   for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
     image(karten_hintergrund,x2,470);
-    anfangsKoordinate_2.set(k, x2);
+    anfangsKoordinate_2[k] = x2;
     k++;
   }
 
-  endKoordinate_2 = anfangsKoordinate_2.get(k)-260;
+  endKoordinate_2 = anfangsKoordinate_2[k]-260;
 
   if(spielerkartenziehen2 == true && anfangsKoordinate_2.get(k) > (endKoordinate_2 - 2)){
-    anfangsKoordinate_2.set(k, anfangsKoordinate_2.get(k)-2);
-    koordinateX_2 = anfangsKoordinate_2.get(k);
+    anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
+    koordinateX_2 = anfangsKoordinate_2[k];
     image(karten_hintergrund,koordinateX_2,470);  
   }
-
-  anzahlAufgedeckt2 = anzeigeKarten2.size();
+  
+  for(int n = 0; n < anzeigeKarten2.length; n++){
+    if()
+  }
+  
+  anzahlAufgedeckt2 = anzeigeKarten2.length;
   position2 = 280;
 
   for(int m = 0; m < anzahlAufgedeckt2; m++){   
