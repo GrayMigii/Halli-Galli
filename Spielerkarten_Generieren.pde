@@ -77,29 +77,6 @@ void draw(){
     fill(255,colorA_2,colorB_2);
     text(anzeige2,230,470);
     
-    //Bestimmung der Anzahl der angezeigten ungedeckten Karten
-    
-    if(rundenSieg_1 == true){
-      bedingungPlus_1 = true;
-      bedingungMinus_2 = true;
-    }
-    if(rundenSieg_2 == true){
-      bedingungMinus_1 = true;
-      bedingungPlus_2 = true;
-    }
-    
-    if(bedingungPlus_1 == true){
-      koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
-    }else if(bedingungMinus_1 == true){
-      koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
-    }
-    
-    if(bedingungPlus_2 == true){
-      koordinatenLimit_2 = koordinatenLimit_2 + (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
-    }else if(bedingungMinus_2 == true){
-      koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
-    }
-    
     //Bestimmung der angezeigten Karte
     
     if(spielerkartenziehen1 == true){
@@ -177,10 +154,34 @@ void draw(){
       image(karten[anzeigeKarten2.get(k)],position2,470);
       position2 = position2 + 10;
     }
-    if(){
+    
+    //Bestimmung der Anzahl der angezeigten ungedeckten Karten
+    
+    if(rundenSieg_1 == true){
+      bedingungPlus_1 = true;
+      bedingungMinus_2 = true;
+      anzeigeKarten1.clear();
+      anzeigeKarten2.clear();
       
     }
+    if(rundenSieg_2 == true){
+      bedingungMinus_1 = true;
+      bedingungPlus_2 = true;
+      anzeigeKarten1.clear();
+      anzeigeKarten2.clear();
+    }
     
+    if(bedingungPlus_1 == true){
+      koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
+    }else if(bedingungMinus_1 == true){
+      koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
+    }
+    
+    if(bedingungPlus_2 == true){
+      koordinatenLimit_2 = koordinatenLimit_2 + (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
+    }else if(bedingungMinus_2 == true){
+      koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
+    }
     
   }
 }
