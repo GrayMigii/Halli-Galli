@@ -37,49 +37,8 @@ void draw(){
   image(glocke,290,290);
   image(kartenhintergrund_basis,280,20);
   image(kartenhintergrund_basis,280,470);
-  
     
-    //Kartenanzahl-Anzeige
-    
-    if(kartenanzahl1 < 10){
-      anzeige1 = "0" + Integer.toString(kartenanzahl1);
-    }else{
-      anzeige1 = Integer.toString(kartenanzahl1);
-    }
-
-    if(kartenanzahl2 < 10){
-      anzeige2 = "0" + Integer.toString(kartenanzahl2);
-    }else{
-      anzeige2 = Integer.toString(kartenanzahl2);
-    }
-    
-    
-    
-    //Bestimmung der angezeigten Karte
-    
-    if(spielerkartenziehen1 == true){
-      if(spielerkarten1 < 5){
-        anzeigeKarte1 = spielerkarten1;
-      }else if(spielerkarten1 > 10 && spielerkarten1 < 15){
-        anzeigeKarte1 = spielerkarten1 - 6;
-      }else if(spielerkarten1 > 20 && spielerkarten1 < 25){
-        anzeigeKarte1 = spielerkarten1 - 12;
-      }else if(spielerkarten1 > 30 && spielerkarten1 < 35){
-        anzeigeKarte1 = spielerkarten1 - 18;
-      }
-      anzeigeKarten1.add(anzeigeKarte1);
-    }
-    
-    if(spielerkartenziehen2 == true){
-      if(spielerkarten2 < 5){
-        anzeigeKarte2 = spielerkarten2;
-      }else if(spielerkarten2 > 10 && spielerkarten2 < 15){
-        anzeigeKarte2 = spielerkarten2 - 6;
-      }else if(spielerkarten2 > 20 && spielerkarten2 < 25){
-        anzeigeKarte2 = spielerkarten2 - 12;
-      }else if(spielerkarten2 > 30 && spielerkarten2 < 35){
-        anzeigeKarte2 = spielerkarten2 - 18;
-      }
+   
       anzeigeKarten2.add(anzeigeKarte2);
     }
     
@@ -168,30 +127,74 @@ void draw(){
 
 
 void anzeige(){
-  if(spielerwechsel==false){
-      colorA_1 = 0;
-      colorB_1 = 0;
-    }else{
-      colorA_1 = 255;
-      colorB_1 = 255;
-    }
-    
-    if(spielerwechsel==true){
-      colorA_2 = 0;
-      colorB_2 = 0;
-    }else{
-      colorA_2 = 255;
-      colorB_2 = 255;
-    }
-    
-    textSize(50);
-    
-    fill(255,colorA_1,colorB_1);
-    text(anzeige1,230,20);
-   
-    fill(255,colorA_2,colorB_2);
-    text(anzeige2,230,470);
+
   
+if(spielerwechsel==false){
+  colorA_1 = 0;
+  colorB_1 = 0;
+}else{
+  colorA_1 = 255;
+  colorB_1 = 255;
+}
+
+if(spielerwechsel==true){
+  colorA_2 = 0;
+  colorB_2 = 0;
+}else{
+  colorA_2 = 255;
+  colorB_2 = 255;
+}
+
+textSize(50);
+
+if(kartenanzahl1 < 10){
+  anzeige1 = "0" + Integer.toString(kartenanzahl1);
+}else{
+  anzeige1 = Integer.toString(kartenanzahl1);
+}
+
+if(kartenanzahl2 < 10){
+  anzeige2 = "0" + Integer.toString(kartenanzahl2);
+}else{
+  anzeige2 = Integer.toString(kartenanzahl2);
+}
+
+fill(255,colorA_1,colorB_1);
+text(anzeige1,230,20);
+
+fill(255,colorA_2,colorB_2);
+text(anzeige2,230,470);
+  
+}
+
+//Bestimmung der angezeigten Karte
+
+void (){
+    
+if(spielerkartenziehen1 == true){
+  if(spielerkarten1 < 5){
+    anzeigeKarte1 = spielerkarten1;
+  }else if(spielerkarten1 > 10 && spielerkarten1 < 15){
+    anzeigeKarte1 = spielerkarten1 - 6;
+  }else if(spielerkarten1 > 20 && spielerkarten1 < 25){
+    anzeigeKarte1 = spielerkarten1 - 12;
+  }else if(spielerkarten1 > 30 && spielerkarten1 < 35){
+    anzeigeKarte1 = spielerkarten1 - 18;
+  }
+  anzeigeKarten1.add(anzeigeKarte1);
+}
+    
+if(spielerkartenziehen2 == true){
+  if(spielerkarten2 < 5){
+    anzeigeKarte2 = spielerkarten2;
+  }else if(spielerkarten2 > 10 && spielerkarten2 < 15){
+    anzeigeKarte2 = spielerkarten2 - 6;
+  }else if(spielerkarten2 > 20 && spielerkarten2 < 25){
+    anzeigeKarte2 = spielerkarten2 - 12;
+  }else if(spielerkarten2 > 30 && spielerkarten2 < 35){
+    anzeigeKarte2 = spielerkarten2 - 18;
+  }
+
 }
 
 
