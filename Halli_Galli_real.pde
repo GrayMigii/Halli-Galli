@@ -209,57 +209,63 @@ if(bedingungPlus_2 == true){
 }
 }
 
-void (){
-int j = 0;
-    for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
-      image(karten_hintergrund,x1,470);
-      anfangsKoordinate_1.set(j, x1);
-      j++;
-    }
-    
-    endKoordinate_1 = anfangsKoordinate_1.get(j)-260;
-    
-    if(spielerkartenziehen1 == true && anfangsKoordinate_1.get(j) > (endKoordinate_1 - 2)){
-      anfangsKoordinate_1.set(j, anfangsKoordinate_1.get(j));
-      koordinateX_1 = anfangsKoordinate_1.get(j);
-      image(karten_hintergrund,koordinateX_1,20);  
-    }
-    
-    anzahlAufgedeckt1 = anzeigeKarten1.size();
-    position1 = 280;
-    
-    for(int l = 0; l < anzahlAufgedeckt1; l++){   
-      image(karten[anzeigeKarten1.get(l)],position1,20);
-      position1 = position1 + 10;
-      spielerwechsel=true;
-    }
+void kartenAnzeige1(){
+
+  int j = 0;
+
+  for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
+    image(karten_hintergrund,x1,470);
+    anfangsKoordinate_1.set(j, x1);
+    j++;
+  }
+
+  endKoordinate_1 = anfangsKoordinate_1.get(j)-260;
+
+  if(spielerkartenziehen1 == true && anfangsKoordinate_1.get(j) > (endKoordinate_1 - 2)){
+    anfangsKoordinate_1.set(j, anfangsKoordinate_1.get(j));
+    koordinateX_1 = anfangsKoordinate_1.get(j);
+    image(karten_hintergrund,koordinateX_1,20);  
+  }
+
+  anzahlAufgedeckt1 = anzeigeKarten1.size();
+  position1 = 280;
+
+  for(int l = 0; l < anzahlAufgedeckt1; l++){   
+    image(karten[anzeigeKarten1.get(l)],position1,20);
+    position1 = position1 + 10;
+    spielerwechsel=true;
+  }
+
 }
 
-void (){
-    for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
-      image(karten_hintergrund,x2,470);
-      anfangsKoordinate_2.set(k, x2);
-      k++;
-    }
-    
-    endKoordinate_2 = anfangsKoordinate_2.get(k)-260;
-    
-    if(spielerkartenziehen2 == true && anfangsKoordinate_2.get(k) > (endKoordinate_2 - 2)){
-      anfangsKoordinate_2.set(k, anfangsKoordinate_2.get(k)-2);
-      koordinateX_2 = anfangsKoordinate_2.get(k);
-      image(karten_hintergrund,koordinateX_2,470);  
-    }
-    
-    anzahlAufgedeckt2 = anzeigeKarten2.size();
-    position2 = 280;
-    
-    for(int m = 0; m < anzahlAufgedeckt2; m++){   
-      image(karten[anzeigeKarten2.get(m)],position2,470);
-      position2 = position2 + 10;
-      spielerwechsel=false;
-    }
+void kartenAnzeige2(){
+
+  int k = 0;
+
+  for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
+    image(karten_hintergrund,x2,470);
+    anfangsKoordinate_2.set(k, x2);
+    k++;
+  }
+
+  endKoordinate_2 = anfangsKoordinate_2.get(k)-260;
+
+  if(spielerkartenziehen2 == true && anfangsKoordinate_2.get(k) > (endKoordinate_2 - 2)){
+    anfangsKoordinate_2.set(k, anfangsKoordinate_2.get(k)-2);
+    koordinateX_2 = anfangsKoordinate_2.get(k);
+    image(karten_hintergrund,koordinateX_2,470);  
+  }
+
+  anzahlAufgedeckt2 = anzeigeKarten2.size();
+  position2 = 280;
+
+  for(int m = 0; m < anzahlAufgedeckt2; m++){   
+    image(karten[anzeigeKarten2.get(m)],position2,470);
+    position2 = position2 + 10;
+    spielerwechsel=false;
+  }
 }
-}
+
 
 //Spielkarten
 
