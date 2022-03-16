@@ -1,17 +1,19 @@
 boolean rundenSieg_1 = false, rundenSieg_2 = false, bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karte_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
-int summe1, summe2, summe=0, zufall1, zufall2;
+int summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeck2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 String anzeige1, anzeige2;
 
 PImage karten[] = new PImage[16];
-int anfangsKoordinate_1[] = new int [16];
-int anfangsKoordinate_2[] = new int [16];
 
 PFont f = createFont(); 
-int anzeigeKarte1, anzeigeKarte2;
+
+ArrayList<Integer> anzeigeKarten1 = new ArrayList<Integer>();
+ArrayList<Integer> anzeigeKarten2 = new ArrayList<Integer>();
+ArrayList<Integer> anfangsKoordinate_1 = new ArrayList<Integer>();
+ArrayList<Integer> anfangsKoordinate_2 = new ArrayList<Integer>();
 
 //Spielfläche
 
@@ -29,20 +31,12 @@ void setup(){
 }
 
 void draw(){
-
-  glocke1();
-  glocke2();
-  keyPressed();
   
   image(background,0,0);
   image(glocke,290,290);
   image(kartenhintergrund_basis,280,20);
   image(kartenhintergrund_basis,280,470);
   
-  koordinatenLimit_1 = 541;
-  koordinatenLimit_2 = 541;
-  
-
   while(){
     
     //Kartenanzahl-Anzeige
@@ -83,7 +77,7 @@ void draw(){
     fill(255,colorA_2,colorB_2);
     text(anzeige2,230,470);
     
-    //Bestimmung der Anzahl der angezeigten Karten
+    //Bestimmung der Anzahl der angezeigten ungedeckten Karten
     
     if(rundenSieg_1 == true){
       bedingungPlus_1 = true;
@@ -108,75 +102,86 @@ void draw(){
     
     //Bestimmung der angezeigten Karte
     
-    if(spielerkarten1 < 5){
-      anzeigeKarte1 = spielerkarten1;
-    }else if(spielerkarten1 > 10 && spielerkarten1 < 15){
-      anzeigeKarte1 = spielerkarten1 - 6;
-    }else if(spielerkarten1 > 20 && spielerkarten1 < 25){
-      anzeigeKarte1 = spielerkarten1 - 12;
-    }else if(spielerkarten1 > 30 && spielerkarten1 < 35){
-      anzeigeKarte1 = spielerkarten1 - 18;
-    }
-    
-    if(spielerkarten2 < 5){
-      anzeigeKarte2 = spielerkarten2;
-    }else if(spielerkarten2 > 10 && spielerkarten2 < 15){
-      anzeigeKarte2 = spielerkarten2 - 6;
-    }else if(spielerkarten2 > 20 && spielerkarten2 < 25){
-      anzeigeKarte2 = spielerkarten2 - 12;
-    }else if(spielerkarten2 > 30 && spielerkarten2 < 35){
-      anzeigeKarte2 = spielerkarten2 - 18;
-    }
-    
-    //Grafische Darstellung der aktuellen Karten des 1.Spielers und Das Bewegen der Karten vom 1. Spieler
-    /*
-    for (int x1 = 470; x1 < koordinatenLimit_2; x1=x1+10){
-     for (int j = 0; j < kartenanzahl2 ; j++){
-      image(karten_hintergrund,x1,20);
-      anfangsKoordinate_1[j] = x1;
-     }
-    }
-    */
-    int j = 0;
-    for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
-      image(karten_hintergrund,x1,470);
-      anfangsKoordinate_1[j] = x1;
-      j++;
-    }
-    
     if(spielerkartenziehen1 == true){
-      while (anfangsKoordinate_1[j] > 278){
-        anfangsKoordinate_1[j] = anfangsKoordinate_1[j]-2;
-        koordinateX_1 = anfangsKoordinate_1[j];
-        image(karte_hintergrund,koordinateX,20);
+      if(spielerkarten1 < 5){
+        anzeigeKarte1 = spielerkarten1;
+      }else if(spielerkarten1 > 10 && spielerkarten1 < 15){
+        anzeigeKarte1 = spielerkarten1 - 6;
+      }else if(spielerkarten1 > 20 && spielerkarten1 < 25){
+        anzeigeKarte1 = spielerkarten1 - 12;
+      }else if(spielerkarten1 > 30 && spielerkarten1 < 35){
+        anzeigeKarte1 = spielerkarten1 - 18;
       }
-      image(karten[anzeigeKarte1],280,20);
-    }
-    
-    //Grafische Darstellung der aktuellen Karten des 2.Spielers und Das Bewegen der Karten vom 2.Spieler
-    /*
-    for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
-      for (int k = 0; k < kartenanzahl2 ; k++){
-        image(karten_hintergrund,x2,470);
-        anfangsKoordinate_2[k] = x2;
-      }
-    }
-    */
-    int k = 0;
-    for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
-      image(karten_hintergrund,x2,470);
-      anfangsKoordinate_2[k] = x2;
-      k++;
+      anzeigeKarten1.add(anzeigeKarte1);
     }
     
     if(spielerkartenziehen2 == true){
-      while (anfangsKoordinate_2[k] > 278){
-        anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
-        koordinateX_2 = anfangsKoordinate_2[k];
-        image(karte_hintergrund,koordinateX_2,470);
+      if(spielerkarten2 < 5){
+        anzeigeKarte2 = spielerkarten2;
+      }else if(spielerkarten2 > 10 && spielerkarten2 < 15){
+        anzeigeKarte2 = spielerkarten2 - 6;
+      }else if(spielerkarten2 > 20 && spielerkarten2 < 25){
+        anzeigeKarte2 = spielerkarten2 - 12;
+      }else if(spielerkarten2 > 30 && spielerkarten2 < 35){
+        anzeigeKarte2 = spielerkarten2 - 18;
       }
-      image(karten[anzeigeKarte2],280,470);
+      anzeigeKarten2.add(anzeigeKarte2);
     }
+    
+    //Grafische Darstellung der aktuellen Karten des 1.Spielers und Das Bewegen der Karten vom 1. Spieler
+    
+    int j = 0;
+    for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
+      image(karten_hintergrund,x1,470);
+      anfangsKoordinate_1.get(j) = x1;
+      j++;
+    }
+    
+    endKoordinate_1 = anfangsKoordinate_1.get(j)-260;
+    
+    if(spielerkartenziehen1 == true && anfangsKoordinate_1.get(j) > (endKoordinate_1 - 2)){
+      anfangsKoordinate_1.get(j) = anfangsKoordinate_1.get(j);
+      koordinateX_1 = anfangsKoordinate_1.get(j);
+      image(karte_hintergrund,koordinateX_1,20);  
+    }
+    
+    anzahlAufgedeckt1 = anzeigeKarten1.size();
+    position1 = 280;
+    
+    for(int l = 0; l < anzahlAufgedeckt1; l++){   
+      image(karten[anzeigeKarten1.get(l)],position1,20);
+      position1 = position1 + 10;
+    }
+    
+    //Grafische Darstellung der aktuellen Karten des 2.Spielers und Das Bewegen der Karten vom 2.Spieler
+    
+    int k = 0;
+    for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
+      image(karten_hintergrund,x2,470);
+      anfangsKoordinate_2.get(k) = x2;
+      k++;
+    }
+    
+    endKoordinate_2 = anfangsKoordinate_2.get(k)-260;
+    
+    if(spielerkartenziehen2 == true && anfangsKoordinate_2.get(k) > (endKoordinate_2 - 2)){
+      anfangsKoordinate_2.get(k) = anfangsKoordinate_2.get(k)-2;
+      koordinateX_2 = anfangsKoordinate_2.get(k);
+      image(karte_hintergrund,koordinateX_2,470);  
+    }
+    
+    anzahlAufgedeckt2 = anzeigeKarten2.size();
+    position2 = 280;
+    
+    for(int k = 0; k < anzahlAufgedeckt2; k++){   
+      image(karten[anzeigeKarten2.get(k)],position2,470);
+      position2 = position2 + 10;
+    }
+    if(){
+      
+    }
+    
+    
   }
 }
 
