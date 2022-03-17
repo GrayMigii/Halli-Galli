@@ -51,7 +51,7 @@ void draw(){
     
     int j = 0;
     for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
-      image(karten_hintergrund,x1,470);
+      image(karten_hintergrund,x1,20);
       anfangsKoordinate_1.set(j, x1);
       j++;
     }
@@ -211,27 +211,34 @@ void kartenAnzeige1(){
 
   int j = 0;
 
-  for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){  
-    image(karten_hintergrund,x1,470);
-    anfangsKoordinate_1.set(j, x1);
+  for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){ 
+    image(karten_hintergrund,x1,20);
+    anfangsKoordinate_2[j] = x2;
     j++;
   }
 
-  endKoordinate_1 = anfangsKoordinate_1.get(j)-260;
+  endKoordinate_1 = anfangsKoordinate_1[j]-260;
 
-  if(spielerkartenziehen1 == true && anfangsKoordinate_1.get(j) > (endKoordinate_1 - 2)){
-    anfangsKoordinate_1.set(j, anfangsKoordinate_1.get(j));
-    koordinateX_1 = anfangsKoordinate_1.get(j);
+  if(spielerkartenziehen1 == true && anfangsKoordinate_1[j] > (endKoordinate_1 - 2)){
+    anfangsKoordinate_1[j] = anfangsKoordinate_1[j]-2;
+    koordinateX_1 = anfangsKoordinate_1j];
     image(karten_hintergrund,koordinateX_1,20);  
   }
-
-  anzahlAufgedeckt1 = anzeigeKarten1.size();
+  
+  for(int p = 0; p < anzeigeKarten1.length; p++){
+    if(anzeigeKarten[p] == 0){
+      p=p-1;
+      break;
+    }
+  }
+  
+  anzahlAufgedeckt1 = p;
   position1 = 280;
 
   for(int l = 0; l < anzahlAufgedeckt1; l++){   
-    image(karten[anzeigeKarten1.get(l)],position1,20);
+    image(karten[anzeigeKarten1[l]],position1,20);
     position1 = position1 + 10;
-    spielerwechsel=true;
+    spielerwechsel=false;
   }
 
 }
