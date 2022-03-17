@@ -301,12 +301,12 @@ void glocke1(){
     glockeaktivoben=false;
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 -1;
-  //rundenSieg_1 = true;
+  rundenSieg_1 = true;
   glocker=false;
  } else if (glockeaktivoben==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 -1;
   kartenanzahl2 = kartenanzahl2 +1;
-  //rundenSieg_2 = true;
+  rundenSieg_2 = true;
    }
   }
  }
@@ -317,10 +317,12 @@ void glocke2(){
    glockeaktivunten=false;
   kartenanzahl1= kartenanzahl1 -1;
   kartenanzahl2= kartenanzahl2 +1;
+  rundenSieg_2 = true;
   glocker= false;
  } else if (glockeaktivunten==true && glocker==true){
   kartenanzahl1 = kartenanzahl1 +1;
   kartenanzahl2 = kartenanzahl2 -1;
+  rundenSieg_1 = true;
   }
  }
 }
