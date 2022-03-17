@@ -6,15 +6,8 @@ int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 String anzeige1, anzeige2;
 boolean spielerwechsel=false;
-int  colorA_1 =0, colorB_2 =0;
 
 PImage karten[] = new PImage[16];
-
-
-ArrayList<Integer> anzeigeKarten1 = new ArrayList<Integer>();
-ArrayList<Integer> anzeigeKarten2 = new ArrayList<Integer>();
-ArrayList<Integer> anfangsKoordinate_1 = new ArrayList<Integer>();
-ArrayList<Integer> anfangsKoordinate_2 = new ArrayList<Integer>();
 
 int anzeigeKarten1 = new int [16];
 int anzeigeKarten2 = new int [16];
@@ -33,7 +26,6 @@ void setup(){
   
   for (int i = 1; i < 17; i++){
     karten[(i-1)] = loadImage("karte_"+i+".png");
-  
   }
 }
 
