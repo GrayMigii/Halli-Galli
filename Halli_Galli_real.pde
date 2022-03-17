@@ -185,15 +185,13 @@ glocke2();
 if(rundenSieg_1 == true){
   bedingungPlus_1 = true;
   bedingungMinus_2 = true;
-  anzeigeKarten1.clear();
-  anzeigeKarten2.clear();
+  delete();
   }
   
 if(rundenSieg_2 == true){
   bedingungMinus_1 = true;
   bedingungPlus_2 = true;
-  anzeigeKarten1.clear();
-  anzeigeKarten2.clear();
+  delete();
 }
 
 if(bedingungPlus_1 == true){
@@ -242,7 +240,7 @@ void kartenAnzeige2(){
 
   int k = 0;
 
-  for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){  
+  for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){ 
     image(karten_hintergrund,x2,470);
     anfangsKoordinate_2[k] = x2;
     k++;
@@ -254,10 +252,6 @@ void kartenAnzeige2(){
     anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
     koordinateX_2 = anfangsKoordinate_2[k];
     image(karten_hintergrund,koordinateX_2,470);  
-  }
-  
-  for(int n = 0; n < anzeigeKarten2.length; n++){
-    if()
   }
   
   anzahlAufgedeckt2 = anzeigeKarten2.length;
@@ -312,6 +306,13 @@ void spielerkarten_2() {
    break;
  }
 } 
+
+void delete(){
+  for(int n = 0; n < 16; n++){
+    anzeigeKarten1[n] = 0;
+    anzeigeKarten2[n] = 0; 
+  }
+}
 
 void summe(){
  summe=spielerkarten1+spielerkarten2;
