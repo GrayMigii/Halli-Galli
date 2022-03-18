@@ -1,7 +1,7 @@
 boolean glockeaktivunten = false, rundenSieg_1 = false, rundenSieg_2 = false, bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karten_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
-int r = 0, s = 0, colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0, summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
+int k = 0, j = 0, r = 0, s = 0, colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0, summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 String anzeige1, anzeige2;
@@ -161,8 +161,6 @@ if(bedingungPlus_2 == true){
 
 void kartenAnzeige1(){
 
-  int j = 0;
-
   for (int x1 = 470; x1 < koordinatenLimit_1; x1=x1+10){ 
     image(karten_hintergrund,x1,20);
     anfangsKoordinate_2[j] = x2;
@@ -189,15 +187,12 @@ void kartenAnzeige1(){
 
   for(int l = 0; l < anzahlAufgedeckt1; l++){   
     image(karten[anzeigeKarten1[l]],position1,20);
-    position1 = position1 + 10;
     spielerwechsel=false;
   }
 
 }
 
 void kartenAnzeige2(){
-
-  int k = 0;
 
   for (int x2 = 470; x2 < koordinatenLimit_2; x2=x2+10){ 
     image(karten_hintergrund,x2,470);
@@ -225,7 +220,6 @@ void kartenAnzeige2(){
 
   for(int m = 0; m < anzahlAufgedeckt2; m++){   
     image(karten[anzeigeKarten2[m]],position2,470);
-    position2 = position2 + 10;
     spielerwechsel=false;
   }
 }
