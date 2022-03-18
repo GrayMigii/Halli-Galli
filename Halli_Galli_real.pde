@@ -29,6 +29,7 @@ void setup(){
   }
 }
 
+
 void draw(){
 
   grafikGrundlage();
