@@ -1,7 +1,7 @@
 boolean glockeaktivunten = false, rundenSieg_1 = false, rundenSieg_2 = false, bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karten_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
-int k = 0, j = 0, r = 0, s = 0, colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0, summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
+int position1 = 280, position2 = 280, k = 0, j = 0, r = 0, s = 0, colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0, summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 String anzeige1, anzeige2;
@@ -98,33 +98,36 @@ void anzeige(){
 
 void anzeigeKarten(){
     
-if(spielerkartenziehen1 == true){
-  if(spielerkarten1 < 5){
-    anzeigeKarte1 = spielerkarten1;
-  }else if(spielerkarten1 > 10 && spielerkarten1 < 15){
-    anzeigeKarte1 = spielerkarten1 - 6;
-  }else if(spielerkarten1 > 20 && spielerkarten1 < 25){
-    anzeigeKarte1 = spielerkarten1 - 12;
-  }else if(spielerkarten1 > 30 && spielerkarten1 < 35){
-    anzeigeKarte1 = spielerkarten1 - 18;
+  if(spielerkartenziehen1 == true){
+    if(spielerkarten1 < 5){
+      anzeigeKarte1 = spielerkarten1;
+    }else if(spielerkarten1 > 10 && spielerkarten1 < 15){
+      anzeigeKarte1 = spielerkarten1 - 6;
+    }else if(spielerkarten1 > 20 && spielerkarten1 < 25){
+      anzeigeKarte1 = spielerkarten1 - 12;
+    }else if(spielerkarten1 > 30 && spielerkarten1 < 35){
+      anzeigeKarte1 = spielerkarten1 - 18;
+    }
+    anzeigeKarten1[r] = anzeigeKarte1;
+    r++;
   }
-  anzeigeKarten1[r] = anzeigeKarte1;
-  r++;
-}
-    
-if(spielerkartenziehen2 == true){
-  if(spielerkarten2 < 5){
-    anzeigeKarte2 = spielerkarten2;
-  }else if(spielerkarten2 > 10 && spielerkarten2 < 15){
-    anzeigeKarte2 = spielerkarten2 - 6;
-  }else if(spielerkarten2 > 20 && spielerkarten2 < 25){
-    anzeigeKarte2 = spielerkarten2 - 12;
-  }else if(spielerkarten2 > 30 && spielerkarten2 < 35){
-    anzeigeKarte2 = spielerkarten2 - 18;
+
+  if(spielerkartenziehen2 == true){
+    if(spielerkarten2 < 5){
+      anzeigeKarte2 = spielerkarten2;
+    }else if(spielerkarten2 > 10 && spielerkarten2 < 15){
+      anzeigeKarte2 = spielerkarten2 - 6;
+    }else if(spielerkarten2 > 20 && spielerkarten2 < 25){
+      anzeigeKarte2 = spielerkarten2 - 12;
+    }else if(spielerkarten2 > 30 && spielerkarten2 < 35){
+      anzeigeKarte2 = spielerkarten2 - 18;
+    }
+    anzeigeKarten2[s] = anzeigeKarte2;
+    s++;
   }
-  anzeigeKarten2[s] = anzeigeKarte2;
-  s++;
-}
+  
+return anzeigeKarten1[];
+return anzeigeKarten1[];
 
 }
 
@@ -132,32 +135,33 @@ if(spielerkartenziehen2 == true){
 
 void mengeKartenUngedeckt(){
 
-glocke1();
-glocke2();
+  if(rundenSieg_1 == true){
+    bedingungPlus_1 = true;
+    bedingungMinus_2 = true;
+    delete();
+    }
 
-if(rundenSieg_1 == true){
-  bedingungPlus_1 = true;
-  bedingungMinus_2 = true;
-  delete();
+  if(rundenSieg_2 == true){
+    bedingungMinus_1 = true;
+    bedingungPlus_2 = true;
+    delete();
+  }
+
+  if(bedingungPlus_1 == true){
+    koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
+  }else if(bedingungMinus_1 == true){
+    koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
+  }
+
+  if(bedingungPlus_2 == true){
+    koordinatenLimit_2 = koordinatenLimit_2 + (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
+  }else if(bedingungMinus_2 == true){
+    koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
   }
   
-if(rundenSieg_2 == true){
-  bedingungMinus_1 = true;
-  bedingungPlus_2 = true;
-  delete();
-}
+return koordinatenLimit_1;
+return koordinatenLimit_2;
 
-if(bedingungPlus_1 == true){
-  koordinatenLimit_1 = koordinatenLimit_1 + (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
-}else if(bedingungMinus_1 == true){
-  koordinatenLimit_1 = koordinatenLimit_1 - (10*kartenanzahl1-((koordinatenLimit_1-471)/10));
-}
-
-if(bedingungPlus_2 == true){
-  koordinatenLimit_2 = koordinatenLimit_2 + (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
-}else if(bedingungMinus_2 == true){
-  koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
-}
 }
 
 void kartenAnzeige1(){
@@ -183,8 +187,6 @@ void kartenAnzeige1(){
       break;
     }
   }
- 
-  position1 = 280;
 
   for(int l = 0; l < anzahlAufgedeckt1; l++){   
     image(karten[anzeigeKarten1[l]],position1,20);
@@ -216,8 +218,6 @@ void kartenAnzeige2(){
       break;
     }
   }
-  
-  position2 = 280;
 
   for(int m = 0; m < anzahlAufgedeckt2; m++){   
     image(karten[anzeigeKarten2[m]],position2,470);
@@ -225,6 +225,16 @@ void kartenAnzeige2(){
   }
 }
 
+void delete(){
+  for(int n = 0; n < 16; n++){
+    anzeigeKarten1[n] = 0;
+    anzeigeKarten2[n] = 0; 
+  }
+  
+  return anzeigeKarten1[];
+  return anzeigeKarten[];
+
+}
 
 //Spielkarten
 
@@ -246,6 +256,9 @@ switch (zufallszahl1) {
   spielerkarten1 = (int) Math.round(Math.random()*3+31);
   break;
  }
+ 
+ return spielerkarten1;
+ 
 }
 
 void spielerkarten_2() {
@@ -266,14 +279,10 @@ void spielerkarten_2() {
    spielerkarten2 = (int) Math.round(Math.random()*3+31);
    break;
  }
+ 
+ return spielerkarten2;
+ 
 } 
-
-void delete(){
-  for(int n = 0; n < 16; n++){
-    anzeigeKarten1[n] = 0;
-    anzeigeKarten2[n] = 0; 
-  }
-}
 
 void summe(){
  summe=spielerkarten1+spielerkarten2;
@@ -304,6 +313,8 @@ void glocke1(){
   rundenSieg_2 = true;
    }
   }
+ return rundenSieg_1;
+ return rundenSieg_2;
  }
 
 void glocke2(){
@@ -320,6 +331,8 @@ void glocke2(){
   rundenSieg_1 = true;
   }
  }
+ return rundenSieg_1;
+ return rundenSieg_2;
 }
 
 
