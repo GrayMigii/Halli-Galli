@@ -18,6 +18,7 @@ int anfangsKoordinate_2 = new int [16];
 //Spielfläche
 
 void setup(){
+  frameRate(144);
   size(650,650);
   background = loadImage("background.png");
   glocke = loadImage("glocke.png");
@@ -33,8 +34,12 @@ void setup(){
 void draw(){
 
   grafikGrundlage();
+  glocke1();
+  glocke2();
   anzeige();
   mengeKartenUngedeckt();
+  spielerkarten_1();
+  spielerkarten_2();
   anzeigeKarten();
   kartenAnzeige1();
   kartenAnzeige2();
@@ -125,9 +130,6 @@ void anzeigeKarten(){
     anzeigeKarten2[s] = anzeigeKarte2;
     s++;
   }
-  
-//return anzeigeKarten1[];
-//return anzeigeKarten1[];
 
 }
 
@@ -158,9 +160,6 @@ void mengeKartenUngedeckt(){
   }else if(bedingungMinus_2 == true){
     koordinatenLimit_2 = koordinatenLimit_2 - (10*kartenanzahl2-((koordinatenLimit_2-471)/10));
   }
-  
-//return koordinatenLimit_1;
-//return koordinatenLimit_2;
 
 }
 
@@ -230,9 +229,6 @@ void delete(){
     anzeigeKarten1[n] = 0;
     anzeigeKarten2[n] = 0; 
   }
-  
-  //return anzeigeKarten1[];
-  //return anzeigeKarten[];
 
 }
 
@@ -257,8 +253,6 @@ switch (zufallszahl1) {
   break;
  }
  
- //return spielerkarten1;
- 
 }
 
 void spielerkarten_2() {
@@ -279,8 +273,6 @@ void spielerkarten_2() {
    spielerkarten2 = (int) Math.round(Math.random()*3+31);
    break;
  }
- 
- //return spielerkarten2;
  
 } 
 
@@ -313,8 +305,6 @@ void glocke1(){
   rundenSieg_2 = true;
    }
   }
- //return rundenSieg_1;
- //return rundenSieg_2;
  }
 
 void glocke2(){
@@ -331,8 +321,6 @@ void glocke2(){
   rundenSieg_1 = true;
   }
  }
- //return rundenSieg_1;
- //return rundenSieg_2;
 }
 
 
