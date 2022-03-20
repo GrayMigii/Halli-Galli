@@ -1,7 +1,7 @@
 boolean glockeaktivunten = false, rundenSieg_1 = false, rundenSieg_2 = false, bedingungPlus_1 = false,bedingungMinus_1 = false, bedingungPlus_2 = false,bedingungMinus_2 = false, oben = true, tutorial=true, glocker=false, buttonmove=false, buttonmove2=false, karte_zeigen=false, karte_zeigen2=false, fertig=false, spamcheck=true, glockeaktivoben=false, gloveaktivunten=false, spielerkartenziehen1=false, spielerkartenziehen2=false;
 PImage glocke, karten_hintergrund, background, kartenhintergrund_basis;
 int spielerkarten1=0, spielerkarten2=0;
-int position1 = 280, position2 = 280, k = 0, j = 0, r = 0, s = 0, colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0, summe1, summe2, summe=0, zufall1, zufall2, endKoordinate_1, endKoordinate_2 ,anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
+int position1 = 280, position2 = 280,g = 0,f = 0, k = 0, j = 0, r = 0, s = 0, colorA_1 =0, colorB_1 =0, colorA_2 =0, colorB_2 =0, summe1, summe2, summe=0, zufall1, zufall2, anzeigeKarte1, anzeigeKarte2, koordinatenLimit_1 = 541, koordinatenLimit_2 = 541, position1, position2, anzahlAufgedeckt1, anzahlAufgedeckt2, koordinateX_1, koordinateX_2;
 int kartenanzahl1=8, kartenanzahl2=8;
 float x=400, x2=400;
 String anzeige1, anzeige2;
@@ -169,13 +169,17 @@ void kartenAnzeige1(){
     image(karten_hintergrund,x1,20);
     anfangsKoordinate_2[j] = x2;
     j++;
+    
+    if(x1 == koordinatenLimit_1-1){
+      j = f;
+      j = j-1;
+      koordinatenLimit_1 = koordinatenLimit_1 - 10;
+    }
   }
 
-  endKoordinate_1 = anfangsKoordinate_1[j]-260;
-
-  if(spielerkartenziehen1 == true && anfangsKoordinate_1[j] > (endKoordinate_1 - 2)){
-    anfangsKoordinate_1[j] = anfangsKoordinate_1[j]-2;
-    koordinateX_1 = anfangsKoordinate_1j];
+  if(spielerkartenziehen1 == true && anfangsKoordinate_1[f] > position1){
+    anfangsKoordinate_1[f] = anfangsKoordinate_1[f]-2;
+    koordinateX_1 = anfangsKoordinate_1[f];
     image(karten_hintergrund,koordinateX_1,20);  
   }
   
@@ -200,13 +204,16 @@ void kartenAnzeige2(){
     image(karten_hintergrund,x2,470);
     anfangsKoordinate_2[k] = x2;
     k++;
+    if(x2 == koordinatenLimit_2-1){
+      k = g;
+      k = k-1;
+      koordinatenLimit_1 = koordinatenLimit_1 - 10;
+    }
   }
 
-  endKoordinate_2 = anfangsKoordinate_2[k]-260;
-
-  if(spielerkartenziehen2 == true && anfangsKoordinate_2[k] > (endKoordinate_2 - 2)){
-    anfangsKoordinate_2[k] = anfangsKoordinate_2[k]-2;
-    koordinateX_2 = anfangsKoordinate_2[k];
+  if(spielerkartenziehen2 == true && anfangsKoordinate_2[k] > (position2 - 2)){
+    anfangsKoordinate_2[g] = anfangsKoordinate_2[g]-2;
+    koordinateX_2 = anfangsKoordinate_2[g];
     image(karten_hintergrund,koordinateX_2,470);  
   }
   
